@@ -1,0 +1,5 @@
+INSERT INTO Employes (nom, salaire) values ('nom1', 1001D)
+INSERT INTO Employes (nom, salaire) values ('nom2', 1002D)
+INSERT INTO Employes (nom, salaire) values ('nom3', 1003D)
+INSERT INTO Employes (nom, salaire) values ('nom4', 1004D)
+INSERT INTO Employes (nom, salaire) values ('nom5', 1005D)

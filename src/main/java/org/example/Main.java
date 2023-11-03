@@ -8,17 +8,21 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-
         ApplicationContext appContext = new ClassPathXmlApplicationContext("spring-config.xml");
 
         EmployeService employeeService = appContext.getBean("employeeService", EmployeService.class);
 
-        Employee employee = new Employee();
         Department department = new Department(1L,"IT");
-        employee.setName("employé1");
-        employee.setSalary(10000.0);
-        employee.setDepartment(department);
-
-        employeeService.getAllEmp().stream().forEach(System.out::println);
+        Employee employee = Employee.builder()
+                .name("employe6")
+                .salary(1006.0)
+                .department(department)
+                .build();
+//        employeeService.addEmp(employee);
+//        employeeService.deleteEmp(4L);
+        employeeService.updateEmp(6L, employee);
+//        System.out.println(employeeService.findById(5L));
+        System.out.println("__________________________");
+        employeeService.getAllEmp().forEach(System.out::println);
     }
 }
